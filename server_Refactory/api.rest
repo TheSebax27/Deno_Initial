@@ -1,0 +1,40 @@
+GET http://localhost:8000/usuarios
+
+###
+POST http://localhost:8000/usuarios
+Content-Type: application/json
+
+{
+    "nombre": "Juan"
+}
+
+
+###
+DELETE http://localhost:8000/usuarios
+Content-Type: application/json
+
+{
+    "id": "1"
+}
+
+####
+
+GET http://localhost:8000/libros
+
+
+###
+POST http://localhost:8000/libros
+Content-Type: application/json
+
+{
+    "nombre": "Juan"
+}
+
+
+###
+DELETE http://localhost:8000/libros
+Content-Type: application/json
+
+{
+    "id": "1"
+}

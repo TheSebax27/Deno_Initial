@@ -1,0 +1,76 @@
+GET  http://localhost:8000/usuarios
+
+###
+GET  http://localhost:8000/libros
+
+### Obtener todos los libros
+GET http://localhost:8000/libros
+Content-Type: application/json
+
+### Crear un nuevo libro
+POST http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibro": "Cien años de soledad",
+  "editorial": "Sudamericana",
+  "autor": "Gabriel García Márquez"
+}
+
+### Crear otro libro
+POST http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibro": "El señor de los anillos",
+  "editorial": "Minotauro",
+  "autor": "J.R.R. Tolkien"
+}
+
+### Crear libro con datos inválidos (debe fallar)
+POST http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibro": "",
+  "editorial": "Editorial X",
+  "autor": "Autor Y"
+}
+
+### Actualizar un libro
+PUT http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibroOriginal": "Cien años de soledad",
+  "nombreLibro": "Cien años de soledad (Edición Especial)",
+  "editorial": "Sudamericana",
+  "autor": "Gabriel García Márquez"
+}
+
+### Intentar actualizar un libro que no existe (debe fallar)
+PUT http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibroOriginal": "Libro que no existe",
+  "nombreLibro": "Nuevo nombre de libro",
+  "editorial": "Editorial X",
+  "autor": "Autor Y"
+}
+
+### Eliminar un libro
+DELETE http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibro": "El señor de los anillos"
+}
+
+### Intentar eliminar un libro que no existe (debe fallar)
+DELETE http://localhost:8000/libros
+Content-Type: application/json
+
+{
+  "nombreLibro": "Libro que no existe"
+}
